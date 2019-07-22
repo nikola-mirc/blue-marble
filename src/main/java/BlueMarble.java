@@ -1,5 +1,4 @@
 
-
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
@@ -22,10 +21,9 @@ public class BlueMarble {
 			JSONObject json = new JSONObject(metaInfoJSON);
 			String imageName = (String) json.get("image");
 			String caption = (String) json.get("caption");
-			
-			
+
 			URL url = new URL("https://api.nasa.gov/EPIC/archive/" + quality + "/" + dateAsString.replace('-', '/')
-			+ "/png/" + imageName + ".png?api_key=DEMO_KEY");
+					+ "/png/" + imageName + ".png?api_key=DEMO_KEY");
 			File file = new File(url.getFile());
 			return file;
 //			FileUtils.copyURLToFile(
